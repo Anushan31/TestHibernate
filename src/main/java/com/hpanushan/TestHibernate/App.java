@@ -11,10 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        Employee emp1 = new Employee();
-        emp1.setId(210);
-        emp1.setName("Maven");
-        emp1.setSalary(220);
+        Employee emp;
         
         Configuration con = new Configuration().configure().addAnnotatedClass(Employee.class);
         
@@ -26,8 +23,12 @@ public class App
         
         Transaction tx = session.beginTransaction();
         
-        session.save(emp1);
+        // Reading the object according to the primary key 
+        emp = (Employee) session.get(Employee.class, 341);
+        //
         
         tx.commit();
+        
+        System.out.println(emp);
     }
 }

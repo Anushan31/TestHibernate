@@ -13,13 +13,13 @@ import javax.persistence.Transient;
  * we can specify any name to table by using annotations but usually class name = table name
  */
 
-@Table (name="bowen")
+@Table 
 @Entity
 public class Employee {
 	
 	@Id
 	private int id;
-	@Transient // To avoid adding name to database table
+	//@Transient // To avoid adding name to database table
 	private String name;
 	private int salary;
 	
@@ -41,5 +41,10 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+	
 	
 }
