@@ -11,9 +11,16 @@ public class App
 {
     public static void main( String[] args )
     {
+    	// Configuring the name object
+    	FullName nm = new FullName();
+    	nm.setFname("Anushan");
+    	nm.setMname("Ramesh");
+    	nm.setLname("Ariyarathna");
+    	//
+    	
         Employee emp1 = new Employee();
         emp1.setId(210);
-        emp1.setName("Maven");
+        emp1.setName(nm);
         emp1.setSalary(220);
         
         Configuration con = new Configuration().configure().addAnnotatedClass(Employee.class);

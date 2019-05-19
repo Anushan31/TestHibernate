@@ -5,22 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-/* There are three names as
- * Table name
- * Entity name and
- * Class name 
- * 
- * we can specify any name to table by using annotations but usually class name = table name
- */
-
-@Table (name="bowen")
+@Table 
 @Entity
 public class Employee {
 	
 	@Id
 	private int id;
-	@Transient // To avoid adding name to database table
-	private String name;
+	private FullName name;
 	private int salary;
 	
 	public int getId() {
@@ -29,10 +20,10 @@ public class Employee {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
+	public FullName getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(FullName name) {
 		this.name = name;
 	}
 	public int getSalary() {
