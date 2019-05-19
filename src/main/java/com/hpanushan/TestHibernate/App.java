@@ -12,9 +12,9 @@ public class App
     public static void main( String[] args )
     {
         Employee emp1 = new Employee();
-        emp1.setId(143);
-        emp1.setName("David");
-        emp1.setSalary(150);
+        emp1.setId(210);
+        emp1.setName("Maven");
+        emp1.setSalary(220);
         
         Configuration con = new Configuration().configure().addAnnotatedClass(Employee.class);
         
